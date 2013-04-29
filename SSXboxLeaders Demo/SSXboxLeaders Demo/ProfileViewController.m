@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 Sandalsoft. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ProfileViewController.h"
 #import "SSXboxLeaders.h"
 
-@interface ViewController ()
+@interface ProfileViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ProfileViewController
 
 - (void)viewDidLoad
 {
