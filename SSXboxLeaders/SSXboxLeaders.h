@@ -11,7 +11,7 @@
 
 @interface SSXboxLeaders : NSObject
 
-- (void)fetchGamerProfile:(NSString *)gamerTag
++ (void)fetchGamerProfile:(NSString *)gamerTag
                             success:(void (^)(GamerProfile *profile))success
                             failure:(void (^)(NSError *error))failure;
 

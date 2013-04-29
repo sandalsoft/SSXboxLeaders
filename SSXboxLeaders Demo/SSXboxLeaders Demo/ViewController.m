@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SSXboxLeaders.h"
 
 @interface ViewController ()
 
@@ -24,6 +25,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)searchButtonPressed:(id)sender {
+    NSString *gamerTag = [self.searchTextField.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    [SSXboxLeaders fet]
 }
 
 @end

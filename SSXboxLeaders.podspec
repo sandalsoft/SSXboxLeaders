@@ -1,15 +1,17 @@
 Pod::Spec.new do |s|
+  s.platform     = :ios, '5.0'
   s.name         = 'SSXboxLeaders'
   s.version      = '0.0.1'
+  s.license      = 'MIT'
   s.homepage     = 'https://github.com/sandalsoft/SSXboxLeaders'
   s.authors      = { 'Eric Nelson' => '@sandalsoft' }
-  s.summary      = 'Objective-C Wrapper for XboxLeaders API'
+  s.summary      = 'Objective-C Wrapper for XboxLeaders API.'
   s.source       =  {
                       :git => 'https://github.com/sandalsoft/SSXboxLeaders.git', 
-                      :tag => 'v1.0' 
+                      :tag => 'v0.0.1' 
                     }  
   s.source_files = 'SSXboxLeaders/*.{h,m}'
   s.framework    = 'SystemConfiguration'
   s.requires_arc = true
-  s.dependency 'AFNetworking', '~> 1.2.1'
+  s.ios.dependency 'AFNetworking'
 end

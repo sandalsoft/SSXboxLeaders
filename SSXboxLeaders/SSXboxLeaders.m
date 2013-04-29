@@ -15,7 +15,7 @@ NSString *const XboxLeadersUrl = @"http://www.xboxleaders.com";
 NSString *const XboxLeadersPath = @"/api/profile/%@.json";
 NSString *const JSONDataKey = @"Data";
 
-- (void)fetchGamerProfile:(NSString *)gamerTag
++ (void)fetchGamerProfile:(NSString *)gamerTag
                             success:(void (^)(GamerProfile *profile))success
                             failure:(void (^)(NSError *error))failure {
     
