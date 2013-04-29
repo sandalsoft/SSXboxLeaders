@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GamerProfile.h"
 
 @interface SSXboxLeaders : NSObject
+
+- (GamerProfile *)fetchGamerProfile:(NSString *)gamerTag;
 
 @end

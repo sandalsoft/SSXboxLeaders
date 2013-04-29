@@ -8,6 +8,10 @@
 
 #import "SSXboxLeaders.h"
 
+
 @implementation SSXboxLeaders
 
+- (GamerProfile *)fetchGamerProfile:(NSString *)gamerTag {
+    
+}
 @end
