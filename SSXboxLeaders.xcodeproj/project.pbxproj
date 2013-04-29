@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0713AC50172DFC8A00B8A51C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0713AC4F172DFC8A00B8A51C /* SystemConfiguration.framework */; };
+		0713AC52172DFC9200B8A51C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0713AC51172DFC9200B8A51C /* MobileCoreServices.framework */; };
 		07365BC1172DF09100DB63F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07365BC0172DF09100DB63F8 /* Foundation.framework */; };
 		07365BC6172DF09100DB63F8 /* SSXboxLeaders.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07365BC5172DF09100DB63F8 /* SSXboxLeaders.h */; };
 		07365BC8172DF09100DB63F8 /* SSXboxLeaders.m in Sources */ = {isa = PBXBuildFile; fileRef = 07365BC7172DF09100DB63F8 /* SSXboxLeaders.m */; };
+		07B73BF1172DF59C0046913B /* GamerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B73BF0172DF59C0046913B /* GamerProfile.m */; };
+		8BF5E4E57707481AB6136307 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F5BBDAF4834F61A2417556 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,11 +30,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0713AC4F172DFC8A00B8A51C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0713AC51172DFC9200B8A51C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		07365BBD172DF09100DB63F8 /* libSSXboxLeaders.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSSXboxLeaders.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		07365BC0172DF09100DB63F8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		07365BC4172DF09100DB63F8 /* SSXboxLeaders-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SSXboxLeaders-Prefix.pch"; sourceTree = "<group>"; };
 		07365BC5172DF09100DB63F8 /* SSXboxLeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSXboxLeaders.h; sourceTree = "<group>"; };
 		07365BC7172DF09100DB63F8 /* SSXboxLeaders.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSXboxLeaders.m; sourceTree = "<group>"; };
+		07B73BEF172DF59C0046913B /* GamerProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamerProfile.h; sourceTree = "<group>"; };
+		07B73BF0172DF59C0046913B /* GamerProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamerProfile.m; sourceTree = "<group>"; };
+		65F5BBDAF4834F61A2417556 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD35CD8A52704659B877BD59 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +48,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0713AC52172DFC9200B8A51C /* MobileCoreServices.framework in Frameworks */,
+				0713AC50172DFC8A00B8A51C /* SystemConfiguration.framework in Frameworks */,
 				07365BC1172DF09100DB63F8 /* Foundation.framework in Frameworks */,
+				8BF5E4E57707481AB6136307 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +64,7 @@
 				07365BC2172DF09100DB63F8 /* SSXboxLeaders */,
 				07365BBF172DF09100DB63F8 /* Frameworks */,
 				07365BBE172DF09100DB63F8 /* Products */,
+				FD35CD8A52704659B877BD59 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,7 +79,10 @@
 		07365BBF172DF09100DB63F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0713AC51172DFC9200B8A51C /* MobileCoreServices.framework */,
+				0713AC4F172DFC8A00B8A51C /* SystemConfiguration.framework */,
 				07365BC0172DF09100DB63F8 /* Foundation.framework */,
+				65F5BBDAF4834F61A2417556 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -75,6 +92,8 @@
 			children = (
 				07365BC5172DF09100DB63F8 /* SSXboxLeaders.h */,
 				07365BC7172DF09100DB63F8 /* SSXboxLeaders.m */,
+				07B73BEF172DF59C0046913B /* GamerProfile.h */,
+				07B73BF0172DF59C0046913B /* GamerProfile.m */,
 				07365BC3172DF09100DB63F8 /* Supporting Files */,
 			);
 			path = SSXboxLeaders;
@@ -98,6 +117,7 @@
 				07365BB9172DF09100DB63F8 /* Sources */,
 				07365BBA172DF09100DB63F8 /* Frameworks */,
 				07365BBB172DF09100DB63F8 /* CopyFiles */,
+				5D98EE9EE011417D9D792842 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -134,12 +154,30 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5D98EE9EE011417D9D792842 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		07365BB9172DF09100DB63F8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				07365BC8172DF09100DB63F8 /* SSXboxLeaders.m in Sources */,
+				07B73BF1172DF59C0046913B /* GamerProfile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +239,7 @@
 		};
 		07365BCC172DF09100DB63F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD35CD8A52704659B877BD59 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/SSXboxLeaders.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -213,6 +252,7 @@
 		};
 		07365BCD172DF09100DB63F8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD35CD8A52704659B877BD59 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/SSXboxLeaders.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -242,6 +282,7 @@
 				07365BCD172DF09100DB63F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
