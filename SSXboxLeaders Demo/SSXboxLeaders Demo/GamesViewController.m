@@ -14,14 +14,6 @@
 
 @implementation GamesViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -33,6 +25,22 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (IBAction)searchButtonPressed:(id)sender {
+    [self.searchTextField resignFirstResponder];
+    NSString *gamerTag = [self.searchTextField.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    [SSXboxLeaders fetchGamesPlayed:gamerTag success:^(NSArray *gamesPlayed) {
+        for (Game *game in gamesPlayed) {
+            NSLog(@"------------ game: %@", game);
+        }
+    } failure:^(NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+
+    
 }
 
 @end

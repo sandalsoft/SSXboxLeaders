@@ -15,6 +15,11 @@
                             success:(void (^)(GamerProfile *profile))success
                             failure:(void (^)(NSError *error))failure;
 
++ (void)fetchGamesPlayed:(NSString *)gamerTag
+                 success:(void (^)(NSArray *gamesPlayed))success
+                 failure:(void (^)(NSError *error))failure;
+
+
 
 @end
 
