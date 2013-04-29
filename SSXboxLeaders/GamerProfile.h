@@ -34,4 +34,9 @@
 @property (strong, nonatomic) NSString *Name;
 @property (strong, nonatomic) NSString *Bio;
 
+
+- (NSString *)description;
+
 @end
+
+

@@ -35,7 +35,7 @@
                                     <action selector="searchButtonPressed:" destination="2" eventType="touchUpInside" id="7jw-rh-bdd"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="results" translatesAutoresizingMaskIntoConstraints="NO" id="tbn-T1-bgA">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="results" translatesAutoresizingMaskIntoConstraints="NO" id="tbn-T1-bgA">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="389" id="AgF-HE-BYD"/>
@@ -83,7 +83,7 @@
                 <relationship kind="action" name="searchButtonPressed:"/>
                 <relationship kind="outlet" name="searchButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="searchResultsTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="searchTextView" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="searchTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
     </classes>
