@@ -45,31 +45,6 @@
 }
 
 
-//@property (strong, nonatomic) NSString *Tier;
-//@property BOOL IsValid;
-//@property BOOL IsCheater;
-//@property BOOL IsOnline;
-//@property (strong, nonatomic) NSString *OnlineStatus;
-//@property BOOL XBLLaunchTeam;
-//@property BOOL NXELaunchTeam;
-//@property BOOL KinectLaunchTeam;
-//@property (strong, nonatomic) NSURL *AvatarTile;
-//@property (strong, nonatomic) NSURL *AvatarSmall;
-//@property (strong, nonatomic) NSURL *AvatarLarge;
-//@property (strong, nonatomic) NSURL *AvatarBody;
-//@property (strong, nonatomic) NSURL *AvatarTileSSL;
-//@property (strong, nonatomic) NSURL *AvatarSmallSSL;
-//@property (strong, nonatomic) NSURL *AvatarLargeSSL;
-//@property (strong, nonatomic) NSURL *AvatarBodySSL;
-//@property (strong, nonatomic) NSString *Gamertag;
-//@property (strong, nonatomic) NSNumber *GamerScore;
-//@property (strong, nonatomic) NSNumber *Reputation;
-//@property (strong, nonatomic) NSString *Motto;
-//@property (strong, nonatomic) NSString *Location;
-//@property (strong, nonatomic) NSString *Name;
-//@property (strong, nonatomic) NSString *Bio;
-
-
 - (NSString *)description {
     return [NSString stringWithFormat:@"Tier: %@\n IsValid: %c\n IsCheater: %c\n IsOnline: %c\n OnlineStatus: %@\n XBLLaunchTeam: %c\n NXELaunchTeam: %c\n KinectLaunchTeam: %c\n AvatarTile: %@\n AvatarSmall: %@\n AvatarLarge; %@\n AVatarBody: %@\n AvatarTileSSL: %@\n AvatarSmallSSL: %@\n AvatarLargeSSL %@\n AvatarBodySSL: %@\n GamerTag: %@\n GamerScore: %@\n Reputation: %@\n Motto: %@\n Location: %@\n Name: %@\n Bio: %@\n ", self.Tier, self.IsValid, self.IsCheater, self.IsOnline, self.OnlineStatus, self.XBLLaunchTeam, self.NXELaunchTeam, self.KinectLaunchTeam, self.AvatarTile, self.AvatarSmall, self.AvatarLarge, self.AvatarBody, self.AvatarTileSSL, self.AvatarSmallSSL, self.AvatarLargeSSL, self.AvatarBodySSL, self.Gamertag, self.GamerScore, self.Reputation, self.Motto, self.Location, self.Name, self.Bio];
             
