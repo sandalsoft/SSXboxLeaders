@@ -15,9 +15,9 @@
 
 NSString *const XboxLeadersUrl = @"http://www.xboxleaders.com";
 NSString *const XboxLeadersProfilePath = @"/api/profile/%@.json";
-NSString *const XboxLeadersGamesPath = @"/api/games.json?gamertag=%@";
-NSString *const XboxLeadersAchievementsPath = @"/api/achievements.json?gamertag=%@&titleid=%@";
-NSString *const XboxLeadersFriendsPath = @"/api/friends.json?gamertag=%@";
+NSString *const XboxLeadersGamesPath = @"/api/games.json"; //?gamertag=%@";
+NSString *const XboxLeadersAchievementsPath = @"/api/achievements.json"; //?gamertag=%@&titleid=%@";
+NSString *const XboxLeadersFriendsPath = @"/api/friends.json?"; //gamertag=%@";
 
 NSString *const JSONDataKey = @"Data";
 NSString *const GamesArrayKey = @"PlayedGames";
@@ -52,7 +52,7 @@ NSString *const AchievementsArrayKey = @"Achievements";
                  failure:(void (^)(NSError *))failure {
     
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:XboxLeadersUrl]];
-    NSMutableURLRequest *request =  [client requestWithMethod:@"GET" path:[NSString stringWithFormat:XboxLeadersGamesPath, gamerTag] parameters:nil];
+    NSMutableURLRequest *request =  [client requestWithMethod:@"GET" path:XboxLeadersGamesPath parameters:@{@"gamertag":gamerTag}];
     [request setHTTPShouldUsePipelining:YES];
     AFJSONRequestOperation *jsonOperation = [AFJSONRequestOperation
                                              JSONRequestOperationWithRequest:request
@@ -76,6 +76,48 @@ NSString *const AchievementsArrayKey = @"Achievements";
                                                      // Create NSArray to return.  We don't want a mutable copy for the user so we need to create a non-mutable copy.
                                                      NSArray *playedGames = [[NSArray alloc] initWithArray:playedGamesMut];
                                                      success(playedGames);
+                                                 }
+                                             }
+                                             failure:
+                                             ^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                                 failure(error);
+                                             }];
+    [jsonOperation start];
+
+}
+
++ (void)fetchArchievements:(NSString *)gamerTag
+                forTitleId:(NSNumber *)titleId
+                   success:(void (^)(NSArray *))success
+                   failure:(void (^)(NSError *))failure {
+    
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:XboxLeadersUrl]];
+    NSMutableURLRequest *request =  [client requestWithMethod:@"GET" path:XboxLeadersGamesPath parameters:@{@"gamertag":gamerTag, @"titleid":titleId}];
+    [request setHTTPShouldUsePipelining:YES];
+    AFJSONRequestOperation *jsonOperation = [AFJSONRequestOperation
+                                             JSONRequestOperationWithRequest:request
+                                             success: ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                                 
+                                                 // If the response has data we want
+                                                 if  ([JSON valueForKey:JSONDataKey]) {
+                                                    
+                                                     
+                                                     // Pull out the array of Achievements using valueforkeypath()
+                                                     NSArray *achievementsArray = [[NSArray alloc] initWithArray:[JSON valueForKeyPath:[NSString stringWithFormat:@"%@.%@", JSONDataKey, AchievementsArrayKey]] copyItems:YES];
+                                                     
+                                                     // Create mutable array that will hold the Achievement objects
+                                                     NSMutableArray *achievementsMut = [[NSMutableArray alloc] init];
+                                                     
+                                                     // Itereate over the array, create Achievement objects and shove them into a new array that 'gets returned' (not really returned since we're using blocks but it's the one that the user gets access too.
+                                                     for (NSDictionary *achievementDict in achievementsArray) {
+                                                         Achievement *achievement = [[Achievement alloc] init];
+                                                         [achievement setValuesForKeysWithDictionary:achievementDict];
+                                                         [achievementsMut addObject:achievement];
+                                                     }
+                                                     
+                                                     // Create NSArray to return.  We don't want a mutable copy for the user so we need to create a non-mutable copy.
+                                                     NSArray *achievements = [[NSArray alloc] initWithArray:achievementsMut];
+                                                     success(achievements);
                                                  }
                                              }
                                              failure:
