@@ -11,9 +11,63 @@
                     <view key="view" contentMode="scaleToFill" id="Odq-xP-I3p">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qKU-S4-yS9">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="166" id="3Uv-kj-xJd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adV-mU-bPE">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchButtonPressed:" destination="oz9-Or-s7S" eventType="touchUpInside" id="Zb5-P0-156"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6JN-5b-Atg">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="208" id="1iS-Ml-9Sr"/>
+                                </constraints>
+                            </tableView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nwz-hP-LgJ">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="HPu-LD-ZR8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qKU-S4-yS9" firstAttribute="top" secondItem="Odq-xP-I3p" secondAttribute="top" constant="20" symbolic="YES" type="default" id="4O6-HP-P7l"/>
+                            <constraint firstItem="6JN-5b-Atg" firstAttribute="top" secondItem="Odq-xP-I3p" secondAttribute="top" constant="63" id="Cbp-2w-O6h"/>
+                            <constraint firstAttribute="trailing" secondItem="6JN-5b-Atg" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Nv9-nQ-ZlE"/>
+                            <constraint firstItem="adV-mU-bPE" firstAttribute="baseline" secondItem="qKU-S4-yS9" secondAttribute="baseline" type="default" id="QpH-uy-OG3"/>
+                            <constraint firstAttribute="trailing" secondItem="Nwz-hP-LgJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="TUB-ed-ksH"/>
+                            <constraint firstItem="6JN-5b-Atg" firstAttribute="leading" secondItem="Odq-xP-I3p" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="YYx-bS-nWP"/>
+                            <constraint firstItem="Nwz-hP-LgJ" firstAttribute="top" secondItem="6JN-5b-Atg" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="bE7-75-8Ko"/>
+                            <constraint firstItem="qKU-S4-yS9" firstAttribute="leading" secondItem="Odq-xP-I3p" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cRG-jk-MZo"/>
+                            <constraint firstItem="Nwz-hP-LgJ" firstAttribute="leading" secondItem="Odq-xP-I3p" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="dQf-RS-guc"/>
+                            <constraint firstAttribute="trailing" secondItem="adV-mU-bPE" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="wRz-Aq-p6N"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Achievements" id="eHh-Kc-YfO"/>
+                    <connections>
+                        <outlet property="achievementTextView" destination="Nwz-hP-LgJ" id="i0c-Ll-dVm"/>
+                        <outlet property="gamesTableView" destination="6JN-5b-Atg" id="Y9V-9V-MGr"/>
+                        <outlet property="searchButton" destination="adV-mU-bPE" id="gnb-sx-zEB"/>
+                        <outlet property="searchTextField" destination="qKU-S4-yS9" id="Fgq-gd-2Uy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tLc-zT-REg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,7 +127,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="AZt-n7-cE1"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -198,6 +251,13 @@
     <classes>
         <class className="AchievementsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AchievementsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="searchButtonPressed:"/>
+                <relationship kind="outlet" name="achievementTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="gamesTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="searchButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="searchTextField" candidateClass="UITextField"/>
+            </relationships>
         </class>
         <class className="FriendsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FriendsViewController.h"/>

@@ -7,7 +7,6 @@
 //
 
 #import "GamesViewController.h"
-#import "SSXboxLeaders.h"
 #import "Game.h"
 
 @interface GamesViewController ()

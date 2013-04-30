@@ -12,7 +12,11 @@
 # This file is for SOURCE projects, where there are many extra
 #   files that we want to exclude
 #
-#########################
+
+
+# Demo project should not be committed here
+SSXboxLeaders\ Demo/
+
 
 #####
 # OS X temporary files that should never be committed

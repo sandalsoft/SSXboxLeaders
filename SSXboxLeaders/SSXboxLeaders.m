@@ -92,7 +92,7 @@ NSString *const AchievementsArrayKey = @"Achievements";
                    failure:(void (^)(NSError *))failure {
     
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:XboxLeadersUrl]];
-    NSMutableURLRequest *request =  [client requestWithMethod:@"GET" path:XboxLeadersGamesPath parameters:@{@"gamertag":gamerTag, @"titleid":titleId}];
+    NSMutableURLRequest *request =  [client requestWithMethod:@"GET" path:XboxLeadersAchievementsPath parameters:@{@"gamertag":gamerTag, @"titleid":titleId}];
     [request setHTTPShouldUsePipelining:YES];
     AFJSONRequestOperation *jsonOperation = [AFJSONRequestOperation
                                              JSONRequestOperationWithRequest:request
