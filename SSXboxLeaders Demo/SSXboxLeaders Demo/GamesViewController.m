@@ -7,6 +7,8 @@
 //
 
 #import "GamesViewController.h"
+#import "SSXboxLeaders.h"
+#import "Game.h"
 
 @interface GamesViewController ()
 
@@ -18,7 +20,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    self.gamesTableView.dataSource = self;
+    self.gamesTableView.delegate = self;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -33,14 +38,43 @@
     NSString *gamerTag = [self.searchTextField.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     [SSXboxLeaders fetchGamesPlayed:gamerTag success:^(NSArray *gamesPlayed) {
-        for (Game *game in gamesPlayed) {
-            NSLog(@"------------ game: %@", game);
-        }
+        self.gamesList = gamesPlayed;
+        [self.gamesTableView reloadData];
     } failure:^(NSError *error) {
         NSLog(@"Error: %@", error);
     }];
+}
 
+#pragma mark TableView Delegates
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.gamesList count];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Game *game = [[Game alloc] init];
+    game = [self.gamesList objectAtIndex:[indexPath row]];
+    self.gameDetailTextView.text = [game description];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Game"];
+    if (!cell)
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Game"];
     
+    Game *game = [[Game alloc] init];
+    game = [self.gamesList objectAtIndex:[indexPath row]];
+    cell.textLabel.text = game.Title;
+    
+//    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+//    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+//    [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+//    NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
+//    cell.detailTextLabel.text = dateString;
+    
+    return cell;
 }
 
 @end

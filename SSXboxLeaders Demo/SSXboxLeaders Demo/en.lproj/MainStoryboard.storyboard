@@ -62,17 +62,40 @@
                                     <action selector="searchButtonPressed:" destination="Chw-qp-Wzo" eventType="touchUpInside" id="Otm-Uf-Iww"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="63" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0w9-vD-ZvC">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="194" id="7aB-H9-jER"/>
+                                </constraints>
+                            </tableView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VtH-SW-fbr">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="AZt-n7-cE1"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="m8c-M3-yUN" firstAttribute="leading" secondItem="aDs-JK-f4y" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0MK-w3-Esu"/>
+                            <constraint firstAttribute="trailing" secondItem="VtH-SW-fbr" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="6Et-Te-Jhm"/>
+                            <constraint firstAttribute="trailing" secondItem="0w9-vD-ZvC" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="6su-Xy-YtV"/>
+                            <constraint firstItem="0w9-vD-ZvC" firstAttribute="leading" secondItem="aDs-JK-f4y" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="PaX-T5-I4T"/>
                             <constraint firstItem="QwX-F3-bsg" firstAttribute="baseline" secondItem="m8c-M3-yUN" secondAttribute="baseline" type="default" id="Qhv-gV-eh3"/>
+                            <constraint firstItem="0w9-vD-ZvC" firstAttribute="top" secondItem="QwX-F3-bsg" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Qy5-aj-X8W"/>
+                            <constraint firstItem="VtH-SW-fbr" firstAttribute="leading" secondItem="aDs-JK-f4y" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="YC5-oG-54y"/>
                             <constraint firstAttribute="trailing" secondItem="QwX-F3-bsg" secondAttribute="trailing" constant="12" id="YlG-EV-pZk"/>
+                            <constraint firstAttribute="bottom" secondItem="VtH-SW-fbr" secondAttribute="bottom" constant="7" id="taN-TK-wBT"/>
                             <constraint firstItem="m8c-M3-yUN" firstAttribute="top" secondItem="aDs-JK-f4y" secondAttribute="top" constant="20" symbolic="YES" type="default" id="w9E-Ab-mUR"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Games" id="8rn-Yb-2jn"/>
                     <connections>
+                        <outlet property="gameDetailTextView" destination="VtH-SW-fbr" id="V6H-AS-CVa"/>
+                        <outlet property="gamesTableView" destination="0w9-vD-ZvC" id="WvO-bS-7HD"/>
                         <outlet property="searchButton" destination="QwX-F3-bsg" id="whg-il-Z8L"/>
                         <outlet property="searchTextField" destination="m8c-M3-yUN" id="0Yu-9S-rAj"/>
                     </connections>
@@ -182,6 +205,9 @@
         <class className="GamesViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GamesViewController.h"/>
             <relationships>
+                <relationship kind="action" name="searchButtonPressed:"/>
+                <relationship kind="outlet" name="gameDetailTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="gamesTableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="searchButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="searchTextField" candidateClass="UITextField"/>
             </relationships>
