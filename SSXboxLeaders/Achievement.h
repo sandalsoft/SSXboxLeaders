@@ -10,14 +10,14 @@
 
 @interface Achievement : NSObject
 
-@property (weak, nonatomic) NSNumber *Id;
-@property (weak, nonatomic) NSURL *TitleUrl;
-@property (weak, nonatomic) NSString *Title;
-@property (weak, nonatomic) NSString *Description;
-@property (weak, nonatomic) NSNumber *GamerScore;
+@property (strong, nonatomic) NSNumber *Id;
+@property (strong, nonatomic) NSURL *TileUrl;
+@property (strong, nonatomic) NSString *Title;
+@property (strong, nonatomic) NSString *Description;
+@property (strong, nonatomic) NSNumber *GamerScore;
 @property (nonatomic) BOOL IsSecret;
 @property (nonatomic) BOOL Unlocked;
-@property (weak, nonatomic) NSDate *DateEarned;
+@property (strong, nonatomic) NSDate *DateEarned;
 @property (nonatomic) BOOL EarnedOffline;
 
 @end
