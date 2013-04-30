@@ -17,7 +17,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    self.friendsTableView.delegate = self;
+    self.friendsTableView.dataSource = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -32,9 +34,9 @@
     
     [SSXboxLeaders fetchFriendsInfo:gamerTag success:^(FriendsInfo *friendsInfo) {
         self.friendsList = friendsInfo.Friends;
-        self.totalFriendsLabel.text = [friendsInfo.TotalFriends stringValue];
-        self.totalFriendsOnlineLabel.text = [friendsInfo.TotalOnlineFriends stringValue];
-        self.totalFriendsOfflineLabel.text = [friendsInfo.TotalOfflineFriends stringValue];
+        self.totalFriendsLabel.text = [NSString stringWithFormat:@"Total Friends: %@",[friendsInfo.TotalFriends stringValue]];
+        self.totalFriendsOnlineLabel.text = [NSString stringWithFormat:@"Total Online Friends: %@",[friendsInfo.TotalOnlineFriends stringValue]];
+        self.totalFriendsOfflineLabel.text = [NSString stringWithFormat:@"Total Offline Friends: %@",[friendsInfo.TotalOfflineFriends stringValue]];
         
         [self.friendsTableView reloadData];
     } failure:^(NSError *error) {

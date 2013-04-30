@@ -14,9 +14,9 @@
 
 NSString *const XboxLeadersUrl = @"http://www.xboxleaders.com";
 NSString *const XboxLeadersProfilePath = @"/api/profile/%@.json";
-NSString *const XboxLeadersGamesPath = @"/api/games.json"; //?gamertag=%@";
-NSString *const XboxLeadersAchievementsPath = @"/api/achievements.json"; //?gamertag=%@&titleid=%@";
-NSString *const XboxLeadersFriendsPath = @"/api/friends.json?"; //gamertag=%@";
+NSString *const XboxLeadersGamesPath = @"/api/games.json";
+NSString *const XboxLeadersAchievementsPath = @"/api/achievements.json";
+NSString *const XboxLeadersFriendsPath = @"/api/friends.json?";
 
 NSString *const JSONDataKey = @"Data";
 NSString *const GamesArrayKey = @"PlayedGames";
@@ -144,22 +144,27 @@ NSString *const FriendsArrayKey = @"Friends";
                                                      
                                                      // Create FriendsInfo Object and get info about friends
                                                      FriendsInfo *friendsInfo = [[FriendsInfo alloc] init];
-                                                     friendsInfo.TotalFriends = [JSON valueForKeyPath:@"TotalFriends"];
-                                                     friendsInfo.TotalOnlineFriends = [JSON valueForKeyPath:@"TotalOnlineFriends"];
-                                                     friendsInfo.TotalOfflineFriends = [JSON valueForKeyPath:@"TotalOfflineFriends"];
+                                                     
+                                                     friendsInfo.TotalFriends = [JSON valueForKeyPath:@"Data.TotalFriends"];
+                                                     friendsInfo.TotalOnlineFriends = [JSON valueForKeyPath:@"Data.TotalOnlineFriends"];
+                                                     friendsInfo.TotalOfflineFriends = [JSON valueForKeyPath:@"Data.TotalOfflineFriends"];
+                                                     
                                                      
                                                      // Pull out the array of Friends using valueforkeypath()
-                                                     NSArray *achievementsArray = [[NSArray alloc] initWithArray:[JSON valueForKeyPath:[NSString stringWithFormat:@"%@.%@", JSONDataKey, FriendsArrayKey]] copyItems:YES];
+                                                     NSArray *friendsArray = [[NSArray alloc] initWithArray:[JSON valueForKeyPath:[NSString stringWithFormat:@"%@.%@", JSONDataKey, FriendsArrayKey]] copyItems:YES];
+                                                  
                                                      
                                                      // Create mutable array that will hold the Friend objects
                                                      NSMutableArray *friendsMut = [[NSMutableArray alloc] init];
                                                      
+                                                     
                                                      // Itereate over the array, create Friend objects and shove them into a new array that 'gets returned' (not really returned since we're using blocks but it's the one that the user gets access too.
-                                                     for (NSDictionary *friendsDict in achievementsArray) {
+                                                     for (NSDictionary *friendsDict in friendsArray) {
                                                          Friend *friend = [[Friend alloc] init];
                                                          [friend setValuesForKeysWithDictionary:friendsDict];
                                                          [friendsMut addObject:friend];
                                                      }
+                                                  
                                                      
                                                      // Create NSArray to stuff into FriendInfo array.  We don't want a mutable copy for the user so we need to create a non-mutable copy.
                                                      NSArray *friends = [[NSArray alloc] initWithArray:friendsMut];
