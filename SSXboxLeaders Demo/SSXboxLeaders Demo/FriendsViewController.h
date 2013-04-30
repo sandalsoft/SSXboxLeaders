@@ -9,5 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface FriendsViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
+@property (weak, nonatomic) IBOutlet UIButton *searchButton;
+@property (weak, nonatomic) IBOutlet UILabel *totalFriendsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalFriendsOnlineLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalFriendsOfflineLabel;
+@property (weak, nonatomic) IBOutlet UITableView *friendsTableView;
 
+
+@property (strong, nonatomic) NSArray *friendsList;
 @end

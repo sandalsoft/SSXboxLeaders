@@ -10,7 +10,6 @@
 #import "AFNetworking.h"
 
 
-
 @implementation SSXboxLeaders
 
 NSString *const XboxLeadersUrl = @"http://www.xboxleaders.com";
@@ -23,6 +22,7 @@ NSString *const JSONDataKey = @"Data";
 NSString *const GamesArrayKey = @"PlayedGames";
 NSString *const GamesCountKey = @"GameCount";
 NSString *const AchievementsArrayKey = @"Achievements";
+NSString *const FriendsArrayKey = @"Friends";
 
 + (void)fetchGamerProfile:(NSString *)gamerTag
                             success:(void (^)(GamerProfile *profile))success
@@ -126,6 +126,53 @@ NSString *const AchievementsArrayKey = @"Achievements";
                                              }];
     [jsonOperation start];
 
+}
+
++ (void)fetchFriendsInfo:(NSString *)gamerTag
+                   success:(void (^)(FriendsInfo *))success
+                   failure:(void (^)(NSError *))failure {
+    
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:XboxLeadersUrl]];
+    NSMutableURLRequest *request =  [client requestWithMethod:@"GET" path:XboxLeadersFriendsPath parameters:@{@"gamertag":gamerTag}];
+    [request setHTTPShouldUsePipelining:YES];
+    AFJSONRequestOperation *jsonOperation = [AFJSONRequestOperation
+                                             JSONRequestOperationWithRequest:request
+                                             success: ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                                 
+                                                 // If the response has data we want
+                                                 if  ([JSON valueForKey:JSONDataKey]) {
+                                                     
+                                                     // Create FriendsInfo Object and get info about friends
+                                                     FriendsInfo *friendsInfo = [[FriendsInfo alloc] init];
+                                                     friendsInfo.TotalFriends = [JSON valueForKeyPath:@"TotalFriends"];
+                                                     friendsInfo.TotalOnlineFriends = [JSON valueForKeyPath:@"TotalOnlineFriends"];
+                                                     friendsInfo.TotalOfflineFriends = [JSON valueForKeyPath:@"TotalOfflineFriends"];
+                                                     
+                                                     // Pull out the array of Friends using valueforkeypath()
+                                                     NSArray *achievementsArray = [[NSArray alloc] initWithArray:[JSON valueForKeyPath:[NSString stringWithFormat:@"%@.%@", JSONDataKey, FriendsArrayKey]] copyItems:YES];
+                                                     
+                                                     // Create mutable array that will hold the Friend objects
+                                                     NSMutableArray *friendsMut = [[NSMutableArray alloc] init];
+                                                     
+                                                     // Itereate over the array, create Friend objects and shove them into a new array that 'gets returned' (not really returned since we're using blocks but it's the one that the user gets access too.
+                                                     for (NSDictionary *friendsDict in achievementsArray) {
+                                                         Friend *friend = [[Friend alloc] init];
+                                                         [friend setValuesForKeysWithDictionary:friendsDict];
+                                                         [friendsMut addObject:friend];
+                                                     }
+                                                     
+                                                     // Create NSArray to stuff into FriendInfo array.  We don't want a mutable copy for the user so we need to create a non-mutable copy.
+                                                     NSArray *friends = [[NSArray alloc] initWithArray:friendsMut];
+                                                     friendsInfo.Friends = friends;
+                                                     success(friendsInfo);
+                                                 }
+                                             }
+                                             failure:
+                                             ^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                                 failure(error);
+                                             }];
+    [jsonOperation start];
+    
 }
 
 

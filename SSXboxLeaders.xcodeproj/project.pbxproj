@@ -15,6 +15,8 @@
 		07365BC6172DF09100DB63F8 /* SSXboxLeaders.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07365BC5172DF09100DB63F8 /* SSXboxLeaders.h */; };
 		07365BC8172DF09100DB63F8 /* SSXboxLeaders.m in Sources */ = {isa = PBXBuildFile; fileRef = 07365BC7172DF09100DB63F8 /* SSXboxLeaders.m */; };
 		07B73BF1172DF59C0046913B /* GamerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B73BF0172DF59C0046913B /* GamerProfile.m */; };
+		07FB170A1730712200A6688D /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FB17091730712200A6688D /* Friend.m */; };
+		07FB170D173073D500A6688D /* FriendsInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FB170C173073D500A6688D /* FriendsInfo.m */; };
 		8BF5E4E57707481AB6136307 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F5BBDAF4834F61A2417556 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,10 @@
 		07365BC7172DF09100DB63F8 /* SSXboxLeaders.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSXboxLeaders.m; sourceTree = "<group>"; };
 		07B73BEF172DF59C0046913B /* GamerProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamerProfile.h; sourceTree = "<group>"; };
 		07B73BF0172DF59C0046913B /* GamerProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamerProfile.m; sourceTree = "<group>"; };
+		07FB17081730712200A6688D /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
+		07FB17091730712200A6688D /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
+		07FB170B173073D500A6688D /* FriendsInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsInfo.h; sourceTree = "<group>"; };
+		07FB170C173073D500A6688D /* FriendsInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsInfo.m; sourceTree = "<group>"; };
 		65F5BBDAF4834F61A2417556 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD35CD8A52704659B877BD59 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -104,6 +110,10 @@
 				073276E9172F285600E8B97C /* Game.m */,
 				073276EB172F578000E8B97C /* Achievement.h */,
 				073276EC172F578000E8B97C /* Achievement.m */,
+				07FB17081730712200A6688D /* Friend.h */,
+				07FB17091730712200A6688D /* Friend.m */,
+				07FB170B173073D500A6688D /* FriendsInfo.h */,
+				07FB170C173073D500A6688D /* FriendsInfo.m */,
 				07365BC3172DF09100DB63F8 /* Supporting Files */,
 			);
 			path = SSXboxLeaders;
@@ -190,6 +200,8 @@
 				07B73BF1172DF59C0046913B /* GamerProfile.m in Sources */,
 				073276EA172F285600E8B97C /* Game.m in Sources */,
 				073276ED172F578000E8B97C /* Achievement.m in Sources */,
+				07FB170A1730712200A6688D /* Friend.m in Sources */,
+				07FB170D173073D500A6688D /* FriendsInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
