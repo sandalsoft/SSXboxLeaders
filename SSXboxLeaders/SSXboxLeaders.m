@@ -8,7 +8,7 @@
 
 #import "SSXboxLeaders.h"
 #import "AFNetworking.h"
-#import "Game.h"
+
 
 
 @implementation SSXboxLeaders

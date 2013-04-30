@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "GamerProfile.h"
+#import "Game.h"
 
 @interface SSXboxLeaders : NSObject
 
