@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.platform     = :ios, '5.0'
   s.name         = 'SSXboxLeaders'
-  s.version      = '0.1.1'
+  s.version      = '0.1.2'
   s.license      = 'MIT'
   s.homepage     = 'https://github.com/sandalsoft/SSXboxLeaders'
   s.authors      = { 'Eric Nelson' => '@sandalsoft' }
