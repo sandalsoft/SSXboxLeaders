@@ -18,6 +18,8 @@
 @property BOOL IsOnline;
 @property (strong, nonatomic) NSDictionary *PresenceInfo;
 
+- (id)initWithDictionary:(NSDictionary *)friendDict;
+
 - (NSString *)description;
 
 @end

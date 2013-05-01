@@ -11,38 +11,46 @@
 @implementation GamerProfile
 
 
+- (id)initWithDictionary:(NSDictionary *)achievementDict {
 
-- (void)setAvatarBody:(NSString *)stringInput  {
-    _AvatarBody = [NSURL URLWithString:stringInput];
+    if ((self = [super init])) {
+    
+        if ([[achievementDict valueForKey:@"IsValid"] integerValue] == 1)
+            _IsValid = YES;
+        if ([[achievementDict valueForKey:@"IsCheater"] integerValue] == 1)
+            _IsCheater = YES;
+        if ([[achievementDict valueForKey:@"IsOnline"] integerValue] == 1)
+            _IsOnline = YES;
+        if ([[achievementDict valueForKey:@"XBLLaunchTeam"] integerValue] == 1)
+            _XBLLaunchTeam = YES;
+        if ([[achievementDict valueForKey:@"NXELaunchTeam"] integerValue] == 1)
+            _NXELaunchTeam = YES;
+        if ([[achievementDict valueForKey:@"KinectLaunchTeam"] integerValue] == 1)
+            _KinectLaunchTeam = YES;
+        
+        _AvatarTile = [NSURL URLWithString:[achievementDict valueForKey:@"AvatarTile"]];
+        _AvatarSmall = [NSURL URLWithString:[achievementDict valueForKey:@"AvatarSmall"]];
+        _AvatarLarge = [NSURL URLWithString:[achievementDict valueForKey:@"AvatarLarge"]];
+        _AvatarBody = [NSURL URLWithString:[achievementDict valueForKey:@"AvatarBody"]];
+        _AvatarTileSSL = [NSURL URLWithString:[achievementDict valueForKey:@"AvatarTileSSL"]];
+        _AvatarSmallSSL = [NSURL URLWithString:[achievementDict valueForKey:@"AvatarSmallSSL"]];
+        _AvatarLargeSSL = [NSURL URLWithString:[achievementDict valueForKey:@"AvatarLargeSSL"]];
+        _AvatarBodySSL = [NSURL URLWithString:[achievementDict valueForKey:@"AvatarBodySSL"]];
+        
+        _Tier = [achievementDict valueForKey:@"Tier"];
+        _OnlineStatus = [achievementDict valueForKey:@"OnlineStatus"];
+        _Gamertag = [achievementDict valueForKey:@"Gamertag"];
+        _GamerScore = [achievementDict valueForKey:@"GamerScore"];
+        _Reputation = [achievementDict valueForKey:@"Reputation"];
+        _Motto = [achievementDict valueForKey:@"Motto"];
+        _Location = [achievementDict valueForKey:@"Location"];
+        _Name = [achievementDict valueForKey:@"Name"];
+        _Bio = [achievementDict valueForKey:@"Bio"];
+    }
+    return self;
 }
 
-- (void)setAvatarBodySSL:(NSString *)stringInput  {
-    _AvatarBodySSL = [NSURL URLWithString:stringInput];
-}
 
-- (void)setAvatarLarge:(NSString *)stringInput  {
-    _AvatarLarge = [NSURL URLWithString:stringInput];
-}
-
-- (void)setAvatarLargeSSL:(NSString *)stringInput  {
-    _AvatarLargeSSL = [NSURL URLWithString:stringInput];
-}
-
-- (void)setAvatarSmall:(NSString *)stringInput  {
-    _AvatarSmall = [NSURL URLWithString:stringInput];
-}
-
-- (void)setAvatarSmallSSL:(NSString *)stringInput  {
-    _AvatarSmallSSL = [NSURL URLWithString:stringInput];
-}
-
-- (void)setAvatarTile:(NSString *)stringInput  {
-    _AvatarTile = [NSURL URLWithString:stringInput];
-}
-
-- (void)setAvatarTileSSL:(NSString *)stringInput  {
-    _AvatarTileSSL = [NSURL URLWithString:stringInput];
-}
 
 
 - (NSString *)description {

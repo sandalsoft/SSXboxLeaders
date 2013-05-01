@@ -8,7 +8,6 @@ Pod::Spec.new do |s|
   s.summary      = 'Objective-C Wrapper for XboxLeaders API.'
   s.source       =  {
                       :git => 'https://github.com/sandalsoft/SSXboxLeaders.git', 
-                      :tag => s.version.to_s
                     }  
   s.source_files = 'SSXboxLeaders/*.{h,m}'
   s.framework    = 'SystemConfiguration'

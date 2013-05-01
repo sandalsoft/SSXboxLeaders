@@ -11,20 +11,23 @@
 @implementation Game
 
 
-- (void)setUrl:(NSString *)stringInput  {
-    _Url = [NSURL URLWithString:stringInput];
-}
-
-- (void)setBoxArt:(NSString *)stringInput  {
-    _BoxArt = [NSURL URLWithString:stringInput];
-}
-
-- (void)setLargeBoxArt:(NSString *)stringInput  {
-    _LargeBoxArt = [NSURL URLWithString:stringInput];
-}
-
-- (void)setLastPlayed:(NSNumber *) numberInput  {
-    _LastPlayed = [NSDate dateWithTimeIntervalSince1970:[numberInput doubleValue]];
+- (id)initWithDictionary:(NSDictionary *)gameDict {
+    
+    if ((self = [super init])) {
+        _Id = [gameDict valueForKey:@"Id"];
+        _Title = [gameDict valueForKey:@"Title"];
+        _Url = [NSURL URLWithString:[gameDict valueForKey:@"Url"]];
+        _BoxArt = [NSURL URLWithString:[gameDict valueForKey:@"BoxArt"]];
+        _LargeBoxArt = [NSURL URLWithString:[gameDict valueForKey:@"LargeBoxArt"]];
+        _EarnedGamerScore = [gameDict valueForKey:@"EarnedGamerScore"];
+        _PossibleGamerScore = [gameDict valueForKey:@"PossibleGamerScore"];
+        _EarnedAchievements = [gameDict valueForKey:@"EarnedAchievements"];
+        _PossibleAchievements = [gameDict valueForKey:@"PossibleAchievements"];
+        _PercentageCompleted = [gameDict valueForKey:@"PercentageCompleted"];
+        _LastPlayed = [NSDate dateWithTimeIntervalSince1970:[[gameDict valueForKey:@"LastPlayed"] doubleValue]];
+    }
+    
+    return self;
 }
 
 

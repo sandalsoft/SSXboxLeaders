@@ -20,4 +20,6 @@
 @property (strong, nonatomic) NSDate *DateEarned;
 @property (nonatomic) BOOL EarnedOffline;
 
+- (id)initWithDictionary:(NSDictionary *)achievementDict;
+
 @end

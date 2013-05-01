@@ -10,38 +10,36 @@
 
 @implementation Achievement
 
+- (id)initWithDictionary:(NSDictionary *)achievementDict {
+    
+    if ((self = [super init])) {
 
-- (void)setTitleUrl:(NSString *) stringInput  {
-    _TileUrl = [NSURL URLWithString:stringInput];
+        _Id = [achievementDict valueForKey:@"Id"];
+        _TileUrl = [achievementDict valueForKey:@"TileUrl"];
+        _Title = [achievementDict valueForKey:@"Title"];
+        _Description = [achievementDict valueForKey:@"Description"];
+        _GamerScore = [achievementDict valueForKey:@"GamerScore"];
+        _DateEarned = [NSDate dateWithTimeIntervalSince1970:[[achievementDict valueForKey:@"DateEarned"] doubleValue]];
+        
+        
+        if ([[achievementDict valueForKey:@"IsSecret"] isEqualToString:@"yes"])
+            _IsSecret = YES;
+        else
+            _IsSecret = NO;
+        
+        if ([[achievementDict valueForKey:@"Unlocked"] isEqualToString:@"yes"])
+            _Unlocked = YES;
+        else
+            _Unlocked = NO;
+        
+        if ([[achievementDict valueForKey:@"EarnedOffline"] isEqualToString:@"yes"])
+            _EarnedOffline = YES;
+        else
+            _EarnedOffline = NO;
+    }
+    
+    return self;
 }
-
-
-- (void)setIsSecret:(NSString *)stringInput {
-    if ([stringInput isEqualToString:@"yes"])
-        _IsSecret = YES;
-    else
-        _IsSecret = NO;
-}
-
-- (void)setUnlocked:(NSString *)stringInput {
-    if ([stringInput isEqualToString:@"yes"])
-        _Unlocked = YES;
-    else
-        _Unlocked = NO;
-}
-
-- (void)setDateEarned:(NSNumber *) numberInput  {
-    _DateEarned = [NSDate dateWithTimeIntervalSince1970:[numberInput doubleValue]];
-}
-
-- (void)setEarnedOffline:(NSString *)stringInput {
-    if ([stringInput isEqualToString:@"yes"])
-        _EarnedOffline = YES;
-    else
-        _EarnedOffline = NO;
-}
-
-
 
 
 - (NSString *)description {

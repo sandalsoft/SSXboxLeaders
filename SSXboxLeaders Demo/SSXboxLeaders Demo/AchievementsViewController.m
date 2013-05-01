@@ -60,7 +60,6 @@
         Achievement *achievement = [[Achievement alloc] init];  
         
         achievement = [achievements objectAtIndex:[indexPath row]];
-
         self.achievementTextView.text = [achievements description];
     } failure:^(NSError *error) {
         NSLog(@"Error: %@", error);

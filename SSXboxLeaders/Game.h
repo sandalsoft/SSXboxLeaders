@@ -23,4 +23,6 @@
 @property (strong, nonatomic) NSNumber *PercentageCompleted;
 @property (strong, nonatomic) NSDate *LastPlayed;
 
+- (id)initWithDictionary:(NSDictionary *)gameDict;
+
 @end

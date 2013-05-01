@@ -34,6 +34,7 @@
 @property (strong, nonatomic) NSString *Name;
 @property (strong, nonatomic) NSString *Bio;
 
+- (id)initWithDictionary:(NSDictionary *)profileDict;
 
 - (NSString *)description;
 

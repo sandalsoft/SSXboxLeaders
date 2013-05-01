@@ -34,9 +34,9 @@ NSString *const FriendsArrayKey = @"Friends";
     AFJSONRequestOperation *jsonOperation = [AFJSONRequestOperation
                                              JSONRequestOperationWithRequest:request
                                              success: ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-                                                 GamerProfile *profile = [[GamerProfile alloc] init];
+
                                                  if  ([JSON valueForKey:JSONDataKey]) {
-                                                     [profile setValuesForKeysWithDictionary:[JSON valueForKey:JSONDataKey]];
+                                                 GamerProfile *profile = [[GamerProfile alloc] initWithDictionary:[JSON valueForKey:JSONDataKey]];
                                                      success(profile);
                                                  }
                                              }
@@ -110,8 +110,7 @@ NSString *const FriendsArrayKey = @"Friends";
                                                      
                                                      // Itereate over the array, create Achievement objects and shove them into a new array that 'gets returned' (not really returned since we're using blocks but it's the one that the user gets access too.
                                                      for (NSDictionary *achievementDict in achievementsArray) {
-                                                         Achievement *achievement = [[Achievement alloc] init];
-                                                         [achievement setValuesForKeysWithDictionary:achievementDict];
+                                                         Achievement *achievement = [[Achievement alloc] initWithDictionary:achievementDict];
                                                          [achievementsMut addObject:achievement];
                                                      }
                                                      
@@ -160,8 +159,7 @@ NSString *const FriendsArrayKey = @"Friends";
                                                      
                                                      // Itereate over the array, create Friend objects and shove them into a new array that 'gets returned' (not really returned since we're using blocks but it's the one that the user gets access too.
                                                      for (NSDictionary *friendsDict in friendsArray) {
-                                                         Friend *friend = [[Friend alloc] init];
-                                                         [friend setValuesForKeysWithDictionary:friendsDict];
+                                                         Friend *friend = [[Friend alloc] initWithDictionary:friendsDict];
                                                          [friendsMut addObject:friend];
                                                      }
                                                   

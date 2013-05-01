@@ -11,12 +11,17 @@
 @implementation Friend
 
 
-- (void)setAvatarLarge:(NSString *)stringInput  {
-    _AvatarLarge = [NSURL URLWithString:stringInput];
-}
-
-- (void)setAvatarSmall:(NSString *)stringInput  {
-    _AvatarSmall = [NSURL URLWithString:stringInput];
+- (id)initWithDictionary:(NSDictionary *)friendDict {
+    if ((self = [super init])) {
+        _Gamertag = [friendDict valueForKey:@"Gamertag"];
+        _OnlineStatus = [friendDict valueForKey:@"OnlineStatus"];
+        _AvatarSmall = [NSURL URLWithString:[friendDict valueForKey:@"AvatarSmall"]];
+        _AvatarLarge = [NSURL URLWithString:[friendDict valueForKey:@"AvatarLarge"]];
+        _GamerScore = [friendDict valueForKey:@"GamerScore"];
+        _IsOnline = [[friendDict valueForKey:@"IsOnline"] boolValue];
+        _PresenceInfo = [friendDict valueForKey:@"PresenceInfo"];
+    }
+    return self;
 }
 
 - (NSString *)description {
