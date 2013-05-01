@@ -1,6 +1,8 @@
 ### Objective-C wrapper for XboxLeaders.com API
 
-SSXboxLeaders is an Objective-C class that wraps the xboxleaders.com API for easier use in IOS projects.  So far only the profile functionality has been implemented
+SSXboxLeaders is an Objective-C class that wraps the xboxleaders.com API for easier use in IOS projects.
+
+There is a demo app included to show basic functionality of the library.  It's junk, with no error checking or GUI updates, but it works.
 
 ## Example
 ``` objective-c
