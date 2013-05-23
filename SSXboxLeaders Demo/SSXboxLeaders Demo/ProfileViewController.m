@@ -8,6 +8,9 @@
 
 #import "ProfileViewController.h"
 #import "SSXboxLeaders.h"
+#import "DollarDefaultGestures.h"
+#import "DollarResult.h"
+#import "GestureView.h"
 
 @interface ProfileViewController ()
 
@@ -19,6 +22,20 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.dollarPGestureRecognizer = [[DollarPGestureRecognizer alloc] initWithTarget:self
+                                                                         action:@selector(gestureRecognized:)];
+    [self.dollarPGestureRecognizer setPointClouds:[DollarDefaultGestures defaultPointClouds]];
+    [self.dollarPGestureRecognizer setDelaysTouchesEnded:NO];
+
+}
+- (IBAction)gestureButtonPressed:(id)sender {
+    NSLog(@"pressed");
+    GestureView *gestureView = [[GestureView alloc] init];
+    [self.view addSubview:gestureView];
+    [gestureView setUserInteractionEnabled:YES];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

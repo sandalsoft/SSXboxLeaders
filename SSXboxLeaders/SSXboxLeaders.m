@@ -13,10 +13,10 @@
 @implementation SSXboxLeaders
 
 NSString *const XboxLeadersUrl = @"http://www.xboxleaders.com";
-NSString *const XboxLeadersProfilePath = @"/api/profile/%@.json";
-NSString *const XboxLeadersGamesPath = @"/api/games.json";
-NSString *const XboxLeadersAchievementsPath = @"/api/achievements.json";
-NSString *const XboxLeadersFriendsPath = @"/api/friends.json?";
+NSString *const XboxLeadersProfilePath = @"/api/1.0/profile.json";
+NSString *const XboxLeadersGamesPath = @"/api/1.0/games.json";
+NSString *const XboxLeadersAchievementsPath = @"/api/1.0/achievements.json";
+NSString *const XboxLeadersFriendsPath = @"/api/1.0/friends.json?";
 
 NSString *const JSONDataKey = @"Data";
 NSString *const GamesArrayKey = @"PlayedGames";
@@ -29,7 +29,7 @@ NSString *const FriendsArrayKey = @"Friends";
                             failure:(void (^)(NSError *error))failure {
     
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:XboxLeadersUrl]];
-    NSMutableURLRequest *request =  [client requestWithMethod:@"GET" path:[NSString stringWithFormat:XboxLeadersProfilePath, gamerTag] parameters:nil];
+    NSMutableURLRequest *request =  [client requestWithMethod:@"GET" path:XboxLeadersProfilePath parameters:@{@"gamertag":gamerTag}];
     [request setHTTPShouldUsePipelining:YES];
     AFJSONRequestOperation *jsonOperation = [AFJSONRequestOperation
                                              JSONRequestOperationWithRequest:request

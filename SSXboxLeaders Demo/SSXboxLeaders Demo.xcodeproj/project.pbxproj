@@ -22,6 +22,13 @@
 		073276E1172F26D700E8B97C /* GamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 073276E0172F26D700E8B97C /* GamesViewController.m */; };
 		073276E4172F26E300E8B97C /* AchievementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 073276E3172F26E300E8B97C /* AchievementsViewController.m */; };
 		073276E7172F26F200E8B97C /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 073276E6172F26F200E8B97C /* FriendsViewController.m */; };
+		07FB17301730B38F00A6688D /* DollarDefaultGestures.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FB17251730B38F00A6688D /* DollarDefaultGestures.m */; };
+		07FB17311730B38F00A6688D /* DollarP.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FB17271730B38F00A6688D /* DollarP.m */; };
+		07FB17321730B38F00A6688D /* DollarPGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FB17291730B38F00A6688D /* DollarPGestureRecognizer.m */; };
+		07FB17331730B38F00A6688D /* DollarPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FB172B1730B38F00A6688D /* DollarPoint.m */; };
+		07FB17341730B38F00A6688D /* DollarPointCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FB172D1730B38F00A6688D /* DollarPointCloud.m */; };
+		07FB17351730B38F00A6688D /* DollarResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FB172F1730B38F00A6688D /* DollarResult.m */; };
+		07FB174D1730BDC500A6688D /* GestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FB174C1730BDC500A6688D /* GestureView.m */; };
 		566D49E683DB43FC827CD4B8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A2F6A4F6304D669172361E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +57,20 @@
 		073276E3172F26E300E8B97C /* AchievementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementsViewController.m; sourceTree = "<group>"; };
 		073276E5172F26F200E8B97C /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
 		073276E6172F26F200E8B97C /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		07FB17241730B38F00A6688D /* DollarDefaultGestures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DollarDefaultGestures.h; sourceTree = "<group>"; };
+		07FB17251730B38F00A6688D /* DollarDefaultGestures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DollarDefaultGestures.m; sourceTree = "<group>"; };
+		07FB17261730B38F00A6688D /* DollarP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DollarP.h; sourceTree = "<group>"; };
+		07FB17271730B38F00A6688D /* DollarP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DollarP.m; sourceTree = "<group>"; };
+		07FB17281730B38F00A6688D /* DollarPGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DollarPGestureRecognizer.h; sourceTree = "<group>"; };
+		07FB17291730B38F00A6688D /* DollarPGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DollarPGestureRecognizer.m; sourceTree = "<group>"; };
+		07FB172A1730B38F00A6688D /* DollarPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DollarPoint.h; sourceTree = "<group>"; };
+		07FB172B1730B38F00A6688D /* DollarPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DollarPoint.m; sourceTree = "<group>"; };
+		07FB172C1730B38F00A6688D /* DollarPointCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DollarPointCloud.h; sourceTree = "<group>"; };
+		07FB172D1730B38F00A6688D /* DollarPointCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DollarPointCloud.m; sourceTree = "<group>"; };
+		07FB172E1730B38F00A6688D /* DollarResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DollarResult.h; sourceTree = "<group>"; };
+		07FB172F1730B38F00A6688D /* DollarResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DollarResult.m; sourceTree = "<group>"; };
+		07FB174B1730BDC500A6688D /* GestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureView.h; sourceTree = "<group>"; };
+		07FB174C1730BDC500A6688D /* GestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureView.m; sourceTree = "<group>"; };
 		72F4CA3DA4424613AC895FFD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		92A2F6A4F6304D669172361E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -101,9 +122,12 @@
 		0713AC65172E02BA00B8A51C /* SSXboxLeaders Demo */ = {
 			isa = PBXGroup;
 			children = (
+				07FB17221730B38F00A6688D /* libs */,
 				0713AC6E172E02BA00B8A51C /* AppDelegate.h */,
 				0713AC6F172E02BA00B8A51C /* AppDelegate.m */,
 				0713AC77172E02BA00B8A51C /* MainStoryboard.storyboard */,
+				07FB174B1730BDC500A6688D /* GestureView.h */,
+				07FB174C1730BDC500A6688D /* GestureView.m */,
 				0713AC82172F25A100B8A51C /* MainViewController.h */,
 				0713AC83172F25A100B8A51C /* MainViewController.m */,
 				0713AC7A172E02BA00B8A51C /* ProfileViewController.h */,
@@ -131,6 +155,33 @@
 				0713AC75172E02BA00B8A51C /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07FB17221730B38F00A6688D /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				07FB17231730B38F00A6688D /* DollarP */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		07FB17231730B38F00A6688D /* DollarP */ = {
+			isa = PBXGroup;
+			children = (
+				07FB17241730B38F00A6688D /* DollarDefaultGestures.h */,
+				07FB17251730B38F00A6688D /* DollarDefaultGestures.m */,
+				07FB17261730B38F00A6688D /* DollarP.h */,
+				07FB17271730B38F00A6688D /* DollarP.m */,
+				07FB17281730B38F00A6688D /* DollarPGestureRecognizer.h */,
+				07FB17291730B38F00A6688D /* DollarPGestureRecognizer.m */,
+				07FB172A1730B38F00A6688D /* DollarPoint.h */,
+				07FB172B1730B38F00A6688D /* DollarPoint.m */,
+				07FB172C1730B38F00A6688D /* DollarPointCloud.h */,
+				07FB172D1730B38F00A6688D /* DollarPointCloud.m */,
+				07FB172E1730B38F00A6688D /* DollarResult.h */,
+				07FB172F1730B38F00A6688D /* DollarResult.m */,
+			);
+			path = DollarP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +275,13 @@
 				073276E1172F26D700E8B97C /* GamesViewController.m in Sources */,
 				073276E4172F26E300E8B97C /* AchievementsViewController.m in Sources */,
 				073276E7172F26F200E8B97C /* FriendsViewController.m in Sources */,
+				07FB17301730B38F00A6688D /* DollarDefaultGestures.m in Sources */,
+				07FB17311730B38F00A6688D /* DollarP.m in Sources */,
+				07FB17321730B38F00A6688D /* DollarPGestureRecognizer.m in Sources */,
+				07FB17331730B38F00A6688D /* DollarPoint.m in Sources */,
+				07FB17341730B38F00A6688D /* DollarPointCloud.m in Sources */,
+				07FB17351730B38F00A6688D /* DollarResult.m in Sources */,
+				07FB174D1730BDC500A6688D /* GestureView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
