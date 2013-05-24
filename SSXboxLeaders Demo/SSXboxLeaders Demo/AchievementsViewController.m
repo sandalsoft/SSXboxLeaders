@@ -52,7 +52,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"getting achievement");  
+//    NSLog(@"getting achievement");  
     Game *game = [[Game alloc] init];
     game = [self.gamesList objectAtIndex:[indexPath row]];
     
