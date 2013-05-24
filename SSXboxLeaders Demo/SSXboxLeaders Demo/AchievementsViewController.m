@@ -57,9 +57,8 @@
     game = [self.gamesList objectAtIndex:[indexPath row]];
     
     [SSXboxLeaders fetchArchievements:[self.searchTextField.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] forTitleId:game.Id success:^(NSArray *achievements) {
-        Achievement *achievement = [[Achievement alloc] init];  
         
-        achievement = [achievements objectAtIndex:[indexPath row]];
+        // Show achievements array in TextView
         self.achievementTextView.text = [achievements description];
     } failure:^(NSError *error) {
         NSLog(@"Error: %@", error);
