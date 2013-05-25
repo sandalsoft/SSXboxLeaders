@@ -2,7 +2,7 @@
 
 SSXboxLeaders is a block-based Objective-C class that wraps the xboxleaders.com API for easier use in IOS and OS X projects.
 
-There is a demo app included to show basic functionality of the library.  It's very basic, with no minimal checking or GUI updates, but it works.
+There is a demo app included to show basic functionality of the library.  It's very basic, with minimal error checking nor GUI updates, but it works.
 
 ## Example
 Get profile of a gamertag
