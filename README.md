@@ -63,4 +63,4 @@ List all friends for a gamer and note how many are online of offline
 ```
 
 
-The library is still actively being developed.  Comments or questions go to @sandalsoft.
+The library is still actively being developed.  Comments or questions go to @sandalsoft or eric@sandalsoft.com.
