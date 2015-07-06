@@ -63,7 +63,7 @@ List all friends for a gamer and note how many are online of offline
 ```
 
 
-The library is still actively being developed.  Comments or questions go to @sandalsoft or eric@sandalsoft.com.
+The library is *not* actively being developed, but send comments or questions to @sandalsoft or eric@sandalsoft.com.
 
 <!-- MacBuildServer Install Button -->
 <div class="macbuildserver-block">
