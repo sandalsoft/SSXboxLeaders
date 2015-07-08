@@ -65,9 +65,3 @@ List all friends for a gamer and note how many are online of offline
 
 The library is *not* actively being developed, but send comments or questions to @sandalsoft or eric@sandalsoft.com.
 
-<!-- MacBuildServer Install Button -->
-<div class="macbuildserver-block">
-    <a class="macbuildserver-button" href="http://macbuildserver.com/project/github/build/?xcode_project=SSXboxLeaders+Demo%2FSSXboxLeaders+Demo.xcodeproj&amp;target=SSXboxLeaders+Demo&amp;repo_url=git%3A%2F%2Fgithub.com%2Fsandalsoft%2FSSXboxLeaders.git&amp;build_conf=Release" target="_blank"><img src="http://com.macbuildserver.github.s3-website-us-east-1.amazonaws.com/button_up.png"/></a><br/><sup><a href="http://macbuildserver.com/github/opensource/" target="_blank">by MacBuildServer</a></sup>
-</div>
-<!-- MacBuildServer Install Button -->
-
